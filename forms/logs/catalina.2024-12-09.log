@@ -1,0 +1,595 @@
+09-Dec-2024 08:43:23.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 08:43:23.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:43:23.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:43:23.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:43:23.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:43:23.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 08:43:23.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 08:43:23.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 08:43:23.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=64778:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 08:43:23.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 08:43:23.426 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 08:43:23.426 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 08:43:23.426 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 08:43:23.429 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 08:43:23.806 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:43:23.954 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [768] milliseconds
+09-Dec-2024 08:43:23.974 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 08:43:23.975 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 08:43:23.985 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 08:43:25.399 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 08:43:25.565 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 08:43:26.409 WARNING [main] org.springframework.context.support.AbstractApplicationContext.refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'matrimonyComp': Unsatisfied dependency expressed through field 'matrimonyService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.MatrimonyService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+09-Dec-2024 08:43:26.425 SEVERE [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Context initialization failed
+	org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'matrimonyComp': Unsatisfied dependency expressed through field 'matrimonyService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.MatrimonyService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+		at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+		at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+		at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+		at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:702)
+		at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:578)
+		at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:530)
+		at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:170)
+		at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+		at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1134)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:986)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4864)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5173)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.MatrimonyService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+		... 61 more
+09-Dec-2024 08:43:26.454 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [2,469] ms
+09-Dec-2024 08:43:26.458 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:43:26.468 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2514] milliseconds
+09-Dec-2024 08:44:56.220 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:44:56.381 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 08:44:56.390 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:44:56.431 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:01.996 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 08:45:02.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 08:45:02.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:45:02.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:45:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:45:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:45:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 08:45:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 08:45:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 08:45:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=64892:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 08:45:02.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 08:45:02.010 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 08:45:02.010 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 08:45:02.010 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 08:45:02.018 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 08:45:02.494 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:02.712 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [964] milliseconds
+09-Dec-2024 08:45:02.737 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 08:45:02.738 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 08:45:02.748 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 08:45:04.182 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 08:45:04.351 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 08:45:05.300 WARNING [main] org.springframework.context.support.AbstractApplicationContext.refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'organComp': Unsatisfied dependency expressed through field 'organService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.OrganService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+09-Dec-2024 08:45:05.317 SEVERE [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Context initialization failed
+	org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'organComp': Unsatisfied dependency expressed through field 'organService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.OrganService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+		at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+		at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+		at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+		at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:702)
+		at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:578)
+		at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:530)
+		at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:170)
+		at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+		at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1134)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:986)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4864)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5173)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.OrganService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+		... 61 more
+09-Dec-2024 08:45:05.338 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [2,589] ms
+09-Dec-2024 08:45:05.341 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:05.352 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2638] milliseconds
+09-Dec-2024 08:45:51.519 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:51.669 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 08:45:51.689 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:51.718 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:56.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:45:56.101 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:45:56.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:45:56.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:45:56.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 08:45:56.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 08:45:56.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 08:45:56.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=64907:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 08:45:56.103 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 08:45:56.106 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 08:45:56.106 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 08:45:56.106 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 08:45:56.111 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 08:45:56.487 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:56.644 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [719] milliseconds
+09-Dec-2024 08:45:56.663 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 08:45:56.663 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 08:45:56.669 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 08:45:57.820 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 08:45:57.973 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 08:45:58.798 WARNING [main] org.springframework.context.support.AbstractApplicationContext.refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scholarshipComp': Unsatisfied dependency expressed through field 'scholarshipService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.ScholarshipService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+09-Dec-2024 08:45:58.815 SEVERE [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Context initialization failed
+	org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scholarshipComp': Unsatisfied dependency expressed through field 'scholarshipService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.ScholarshipService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+		at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+		at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+		at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+		at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:702)
+		at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:578)
+		at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:530)
+		at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:170)
+		at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+		at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1134)
+		at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:986)
+		at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4864)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5173)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:706)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1830)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:342)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xworkz.forms.service.ScholarshipService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+		at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+		... 61 more
+09-Dec-2024 08:45:58.826 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [2,156] ms
+09-Dec-2024 08:45:58.829 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:45:58.836 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2191] milliseconds
+09-Dec-2024 08:46:46.898 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:46:47.045 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 08:46:47.053 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:46:47.091 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:46:51.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 08:46:51.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 08:46:51.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 08:46:51.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 08:46:51.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 08:46:51.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 08:46:51.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 08:46:51.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 08:46:51.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 08:46:51.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:46:51.038 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:46:51.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 08:46:51.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 08:46:51.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 08:46:51.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 08:46:51.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 08:46:51.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=64920:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 08:46:51.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 08:46:51.042 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 08:46:51.042 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 08:46:51.042 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 08:46:51.046 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 08:46:51.408 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:46:51.581 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [703] milliseconds
+09-Dec-2024 08:46:51.607 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 08:46:51.607 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 08:46:51.619 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 08:46:52.752 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 08:46:52.896 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 08:46:54.234 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1338 ms
+09-Dec-2024 08:46:54.243 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [2,624] ms
+09-Dec-2024 08:46:54.246 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 08:46:54.253 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2671] milliseconds
+09-Dec-2024 09:05:03.297 WARNING [http-nio-8080-exec-8] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2002-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2002-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2002-02-17]]]
+09-Dec-2024 09:05:18.247 WARNING [http-nio-8080-exec-9] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2002-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2002-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2002-02-17]]]
+09-Dec-2024 09:11:28.356 WARNING [http-nio-8080-exec-7] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2002-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2002-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2002-02-17]]]
+09-Dec-2024 09:13:15.329 WARNING [http-nio-8080-exec-6] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2002-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2002-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2002-02-17]]]
+09-Dec-2024 09:13:20.441 WARNING [http-nio-8080-exec-8] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2002-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2002-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2002-02-17]]]
+09-Dec-2024 09:13:41.582 WARNING [http-nio-8080-exec-3] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2002-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2002-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2002-02-17]]]
+09-Dec-2024 09:14:18.251 WARNING [http-nio-8080-exec-6] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2002-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2002-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2002-02-17]]]
+09-Dec-2024 09:25:49.094 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:25:49.248 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 09:25:49.278 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:25:49.296 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:25:55.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:25:55.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:25:55.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:25:55.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:25:55.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 09:25:55.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 09:25:55.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 09:25:55.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=65375:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 09:25:55.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 09:25:55.035 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 09:25:55.035 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 09:25:55.035 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 09:25:55.040 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 09:25:55.404 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:25:55.564 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [752] milliseconds
+09-Dec-2024 09:25:55.588 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 09:25:55.588 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 09:25:55.598 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 09:25:56.967 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 09:25:57.135 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 09:25:58.532 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1397 ms
+09-Dec-2024 09:25:58.546 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [2,947] ms
+09-Dec-2024 09:25:58.550 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:25:58.562 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2997] milliseconds
+09-Dec-2024 09:27:00.977 WARNING [http-nio-8080-exec-9] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [2001-02-17]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [2001-02-17]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2001-02-17]]]
+09-Dec-2024 09:32:14.909 WARNING [http-nio-8080-exec-5] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'deathCertificateDTO' on field 'deceasedDob': rejected value [1948-03-19]; codes [typeMismatch.deathCertificateDTO.deceasedDob,typeMismatch.deceasedDob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deathCertificateDTO.deceasedDob,deceasedDob]; arguments []; default message [deceasedDob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'deceasedDob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [1948-03-19]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [1948-03-19]]]
+09-Dec-2024 09:32:39.270 WARNING [http-nio-8080-exec-6] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'deathCertificateDTO' on field 'deceasedDob': rejected value [1948-03-19]; codes [typeMismatch.deathCertificateDTO.deceasedDob,typeMismatch.deceasedDob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deathCertificateDTO.deceasedDob,deceasedDob]; arguments []; default message [deceasedDob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'deceasedDob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [1948-03-19]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [1948-03-19]]]
+09-Dec-2024 09:33:07.822 WARNING [http-nio-8080-exec-8] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'deathCertificateDTO' on field 'deceasedDob': rejected value [1948-03-19]; codes [typeMismatch.deathCertificateDTO.deceasedDob,typeMismatch.deceasedDob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deathCertificateDTO.deceasedDob,deceasedDob]; arguments []; default message [deceasedDob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'deceasedDob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [1948-03-19]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [1948-03-19]]]
+09-Dec-2024 09:33:11.595 WARNING [http-nio-8080-exec-9] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'deathCertificateDTO' on field 'deceasedDob': rejected value [1948-03-19]; codes [typeMismatch.deathCertificateDTO.deceasedDob,typeMismatch.deceasedDob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deathCertificateDTO.deceasedDob,deceasedDob]; arguments []; default message [deceasedDob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'deceasedDob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [1948-03-19]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [1948-03-19]]]
+09-Dec-2024 09:34:02.763 WARNING [http-nio-8080-exec-3] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'deathCertificateDTO' on field 'deceasedDob': rejected value [1948-03-19]; codes [typeMismatch.deathCertificateDTO.deceasedDob,typeMismatch.deceasedDob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deathCertificateDTO.deceasedDob,deceasedDob]; arguments []; default message [deceasedDob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'deceasedDob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.time.LocalDate] for value [1948-03-19]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [1948-03-19]]]
+09-Dec-2024 09:38:28.629 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:38:28.787 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 09:38:28.802 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:38:28.834 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:55:10.357 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 09:55:10.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 09:55:10.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 09:55:10.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 09:55:10.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 09:55:10.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 09:55:10.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 09:55:10.359 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 09:55:10.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 09:55:10.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:55:10.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:55:10.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:55:10.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:55:10.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 09:55:10.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 09:55:10.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 09:55:10.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=49333:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 09:55:10.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 09:55:10.364 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 09:55:10.364 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 09:55:10.364 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 09:55:10.368 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 09:55:10.764 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:55:10.950 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [783] milliseconds
+09-Dec-2024 09:55:10.978 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 09:55:10.978 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 09:55:10.992 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 09:55:12.495 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 09:55:12.661 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 09:55:14.029 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1368 ms
+09-Dec-2024 09:55:14.052 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [3,060] ms
+09-Dec-2024 09:55:14.056 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:55:14.065 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3115] milliseconds
+09-Dec-2024 09:55:56.731 WARNING [http-nio-8080-exec-9] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors<EOL>Field error in object 'passportDTO' on field 'dob': rejected value [17-02-2002]; codes [typeMismatch.passportDTO.dob,typeMismatch.dob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [passportDTO.dob,dob]; arguments []; default message [dob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'dob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] for value [17-02-2002]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [17-02-2002]]]
+09-Dec-2024 09:56:43.666 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:56:43.813 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 09:56:43.827 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:56:43.861 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:56:48.147 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:56:48.149 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:56:48.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:56:48.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:56:48.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 09:56:48.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 09:56:48.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 09:56:48.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=49372:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 09:56:48.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 09:56:48.155 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 09:56:48.155 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 09:56:48.155 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 09:56:48.160 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 09:56:48.533 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:56:48.714 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [768] milliseconds
+09-Dec-2024 09:56:48.736 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 09:56:48.736 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 09:56:48.746 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 09:56:49.989 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 09:56:50.149 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 09:56:51.593 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1443 ms
+09-Dec-2024 09:56:51.605 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [2,858] ms
+09-Dec-2024 09:56:51.609 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:56:51.615 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2900] milliseconds
+09-Dec-2024 09:58:24.025 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:58:24.188 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 09:58:24.209 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:58:24.236 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:58:28.611 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 09:58:28.614 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:58:28.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:58:28.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 09:58:28.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 09:58:28.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 09:58:28.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 09:58:28.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 09:58:28.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=49675:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 09:58:28.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 09:58:28.619 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 09:58:28.619 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 09:58:28.619 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 09:58:28.622 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 09:58:28.988 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:58:29.163 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [715] milliseconds
+09-Dec-2024 09:58:29.184 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 09:58:29.184 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 09:58:29.193 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 09:58:30.383 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 09:58:30.539 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 09:58:31.882 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1343 ms
+09-Dec-2024 09:58:31.891 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [2,698] ms
+09-Dec-2024 09:58:31.894 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 09:58:31.902 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2738] milliseconds
+09-Dec-2024 09:59:27.983 WARNING [http-nio-8080-exec-6] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.logException Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 2 errors<EOL>Field error in object 'deathCertificateDTO' on field 'deceasedDob': rejected value [1999-03-02]; codes [typeMismatch.deathCertificateDTO.deceasedDob,typeMismatch.deceasedDob,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deathCertificateDTO.deceasedDob,deceasedDob]; arguments []; default message [deceasedDob]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'deceasedDob'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] for value [1999-03-02]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [1999-03-02]]<EOL>Field error in object 'deathCertificateDTO' on field 'deceasedLastDate': rejected value [2005-04-03]; codes [typeMismatch.deathCertificateDTO.deceasedLastDate,typeMismatch.deceasedLastDate,typeMismatch.java.time.LocalDate,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deathCertificateDTO.deceasedLastDate,deceasedLastDate]; arguments []; default message [deceasedLastDate]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDate' for property 'deceasedLastDate'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.time.LocalDate] for value [2005-04-03]; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [2005-04-03]]]
+09-Dec-2024 10:00:52.395 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:00:52.551 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 10:00:52.574 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:00:52.599 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:00:54.998 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 10:00:55.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 10:00:55.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 10:00:55.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 10:00:55.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 10:00:55.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 10:00:55.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 10:00:55.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=49732:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 10:00:55.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 10:00:55.006 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 10:00:55.006 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 10:00:55.006 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 10:00:55.010 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 10:00:55.397 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:00:55.563 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [728] milliseconds
+09-Dec-2024 10:00:55.584 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 10:00:55.585 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 10:00:55.595 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 10:00:56.977 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 10:00:57.156 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 10:00:58.605 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1449 ms
+09-Dec-2024 10:00:58.614 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [3,018] ms
+09-Dec-2024 10:00:58.617 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:00:58.624 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3060] milliseconds
+09-Dec-2024 10:13:38.734 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:13:38.916 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 10:13:38.933 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:13:38.962 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:23:50.962 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 10:23:50.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 10:23:50.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+09-Dec-2024 10:23:50.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+09-Dec-2024 10:23:50.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+09-Dec-2024 10:23:50.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+09-Dec-2024 10:23:50.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Dec-2024 10:23:50.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=52079:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+09-Dec-2024 10:23:50.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+09-Dec-2024 10:23:50.980 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+09-Dec-2024 10:23:50.980 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+09-Dec-2024 10:23:50.980 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+09-Dec-2024 10:23:50.996 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+09-Dec-2024 10:23:51.501 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:23:51.673 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [981] milliseconds
+09-Dec-2024 10:23:51.698 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Dec-2024 10:23:51.699 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+09-Dec-2024 10:23:51.707 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+09-Dec-2024 10:23:53.095 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Dec-2024 10:23:53.273 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+09-Dec-2024 10:23:54.763 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1489 ms
+09-Dec-2024 10:23:54.778 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [3,070] ms
+09-Dec-2024 10:23:54.781 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 10:23:54.790 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3117] milliseconds
+09-Dec-2024 11:01:20.130 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 11:01:20.319 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Dec-2024 11:01:20.335 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Dec-2024 11:01:20.399 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

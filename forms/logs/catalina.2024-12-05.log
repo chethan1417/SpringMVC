@@ -1,0 +1,70 @@
+05-Dec-2024 09:54:38.856 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+05-Dec-2024 09:54:38.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+05-Dec-2024 09:54:38.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+05-Dec-2024 09:54:38.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+05-Dec-2024 09:54:38.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+05-Dec-2024 09:54:38.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+05-Dec-2024 09:54:38.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+05-Dec-2024 09:54:38.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+05-Dec-2024 09:54:38.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=53702:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+05-Dec-2024 09:54:38.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+05-Dec-2024 09:54:38.865 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+05-Dec-2024 09:54:38.865 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+05-Dec-2024 09:54:38.865 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+05-Dec-2024 09:54:38.870 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+05-Dec-2024 09:54:39.243 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+05-Dec-2024 09:54:39.406 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [731] milliseconds
+05-Dec-2024 09:54:39.425 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+05-Dec-2024 09:54:39.425 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+05-Dec-2024 09:54:39.433 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+05-Dec-2024 09:54:40.902 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-Dec-2024 09:54:41.088 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+05-Dec-2024 09:54:42.606 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1517 ms
+05-Dec-2024 09:54:42.621 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [3,187] ms
+05-Dec-2024 09:54:42.625 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+05-Dec-2024 09:54:42.636 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3230] milliseconds
+05-Dec-2024 10:08:51.024 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+05-Dec-2024 10:08:51.223 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+05-Dec-2024 10:08:51.252 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+05-Dec-2024 10:08:51.302 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+05-Dec-2024 10:08:54.082 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_261\jre
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_261-b12
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\91854\IdeaProjects\forms
+05-Dec-2024 10:08:54.085 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+05-Dec-2024 10:08:54.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\91854\Downloads\tomcat-1\apache-tomcat-9.0.38
+05-Dec-2024 10:08:54.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\91854\IdeaProjects\forms
+05-Dec-2024 10:08:54.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\91854\IdeaProjects\forms\temp
+05-Dec-2024 10:08:54.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\91854\IdeaProjects\forms\conf\logging.properties
+05-Dec-2024 10:08:54.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+05-Dec-2024 10:08:54.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\lib\idea_rt.jar=54065:C:\Users\91854\Downloads\ideaIC-2024.1.4.win (1)\bin
+05-Dec-2024 10:08:54.088 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+05-Dec-2024 10:08:54.091 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+05-Dec-2024 10:08:54.091 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+05-Dec-2024 10:08:54.091 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+05-Dec-2024 10:08:54.095 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+05-Dec-2024 10:08:54.443 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+05-Dec-2024 10:08:54.597 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [710] milliseconds
+05-Dec-2024 10:08:54.621 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+05-Dec-2024 10:08:54.621 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+05-Dec-2024 10:08:54.634 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml]
+05-Dec-2024 10:08:56.130 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+05-Dec-2024 10:08:56.326 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+05-Dec-2024 10:08:57.831 INFO [main] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1505 ms
+05-Dec-2024 10:08:57.842 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\91854\IdeaProjects\forms\conf\Catalina\localhost\forms.xml] has finished in [3,208] ms
+05-Dec-2024 10:08:57.845 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+05-Dec-2024 10:08:57.855 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3257] milliseconds
