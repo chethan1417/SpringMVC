@@ -1,0 +1,209 @@
+package com.xworkz.chethan_gym.service;
+
+import com.xworkz.chethan_gym.constants.StatusEnum;
+import com.xworkz.chethan_gym.dto.AdminDTO;
+import com.xworkz.chethan_gym.dto.EnquiryDTO;
+import com.xworkz.chethan_gym.dto.RegistrationDTO;
+import com.xworkz.chethan_gym.entity.AdminEntity;
+import com.xworkz.chethan_gym.entity.EnquiryEntity;
+import com.xworkz.chethan_gym.entity.RegistrationEntity;
+import com.xworkz.chethan_gym.repository.GymRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
+import java.util.List;
+import java.util.Properties;
+import java.util.Random;
+
+import static java.lang.System.out;
+
+@Service
+public class GymServiceImpl implements GymService {
+
+    public GymServiceImpl() {
+        out.println("created GymServiceImpl");
+    }
+
+    @Autowired
+    GymRepositoryImpl gymRepository;
+
+    EnquiryEntity enquiryEntity = new EnquiryEntity();
+    RegistrationEntity registrationEntity = new RegistrationEntity();
+
+    @Override
+    public boolean validateAdmin(AdminDTO adminDTO) throws NoSuchAlgorithmException {
+        AdminEntity adminEntity = gymRepository.getData(adminDTO.getEmail());
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+        byte[] hashedBytes = messageDigest.digest(adminDTO.getPassword().getBytes());
+        String encodedHash = Base64.getEncoder().encodeToString(hashedBytes);
+        if (adminEntity != null && encodedHash.equals(adminEntity.getPassword())) {
+            return true;
+        }
+        return false;
+    }
+
+
+    @Override
+    public boolean validateAndSaveForEnquiry(EnquiryDTO enquiryDTO) {
+
+        if (enquiryDTO != null) {
+
+            enquiryEntity.setName(enquiryDTO.getName());
+            enquiryEntity.setArea(enquiryDTO.getArea());
+            enquiryEntity.setPh(enquiryDTO.getPh());
+            enquiryEntity.setDistance(enquiryDTO.getDistance());
+            enquiryEntity.setAge(enquiryDTO.getAge());
+            enquiryEntity.setStatus(String.valueOf(StatusEnum.Enquired));
+            enquiryEntity.setDescription("This Client's Enquiry has been successfully completed");
+            gymRepository.save(enquiryEntity);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public Long getCountofPhone(String phone) {
+        return gymRepository.getCountOfPhone(phone);
+    }
+
+
+    @Override
+    public Long getCountofEmail(String email) {
+        return gymRepository.getCountOfEmail(email);
+    }
+
+    @Override
+    public boolean validateAndSaveForRegistration(RegistrationDTO registrationDTO) {
+
+        if (registrationDTO != null) {
+            String password = generatePassword();
+
+            registrationEntity.setName(registrationDTO.getName());
+            registrationEntity.setEmail(registrationDTO.getEmail());
+            registrationEntity.setPh(registrationDTO.getPh());
+            registrationEntity.setPassword(password);
+            registrationEntity.setPackages(registrationDTO.getPackages());
+            registrationEntity.setTrainer(registrationDTO.getTrainer());
+            registrationEntity.setGymName(registrationDTO.getGymName());
+            registrationEntity.setAmount(registrationDTO.getAmount());
+            registrationEntity.setDiscount(registrationDTO.getDiscount());
+            registrationEntity.setBalance(registrationDTO.getBalance());
+            registrationEntity.setInstallment(registrationDTO.getInstallment());
+            registrationEntity.setPaidAmount(registrationDTO.getPaidAmount());
+
+
+            boolean saved = gymRepository.saveRegistration(registrationEntity);
+            if (saved) {
+                return saveEmail(registrationDTO.getEmail(), password);
+            }
+        }
+
+
+        return false;
+    }
+
+    @Override
+    public String generatePassword() {
+        int passwordLength = 8;
+        String characterPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuilder password = new StringBuilder();
+        for (int i = 0; i < passwordLength; i++) {
+            int index = random.nextInt(characterPool.length());
+            password.append(characterPool.charAt(index));
+        }
+        return password.toString();
+    }
+
+
+    @Override
+    public boolean saveEmail(String email, String password) {
+
+        final String username = "chethan.chiru.rc@gmail.com";
+        final String userPassword = "btlw qavi xork qwqd";
+
+        
+        Properties prop = new Properties();
+        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.port", "587");
+        prop.put("mail.smtp.auth", "true");
+        prop.put("mail.smtp.starttls.enable", "true");
+        prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        prop.put("mail.debug", "true");
+
+        Session session = Session.getInstance(prop,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, userPassword);
+                    }
+                });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+            message.setSubject("Your password");
+            message.setText("your password" + password);
+            Transport.send(message);
+            System.out.println("Done");
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
+
+    @Override
+    public List<EnquiryEntity> getAllEnquiries() {
+        List<EnquiryEntity> enquiries = gymRepository.getAllEnquiries();
+        return enquiries;
+    }
+
+
+    @Override
+    public EnquiryEntity updateEnquiry(int enquiryId, String status, String description) {
+
+        enquiryEntity.setEnquiry_id(enquiryId);
+        enquiryEntity.setStatus(status);
+        enquiryEntity.setDescription(description);
+        gymRepository.updateDetailsByenquiryId(enquiryEntity);
+        return null;
+    }
+
+    @Override
+    public boolean updateRegistration(int reg_id, String packages, String trainer, String amount, String paidAmount, String balance) {
+
+        if (reg_id!=0) {
+            registrationEntity.setReg_id(reg_id);
+            registrationEntity.setPackages(packages);
+            registrationEntity.setTrainer(trainer);
+            registrationEntity.setAmount(amount);
+            registrationEntity.setPaidAmount(paidAmount);
+            registrationEntity.setBalance(balance);
+            gymRepository.updateDetailsByregId(registrationEntity);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public RegistrationEntity getAllEnquiriesRegistration(String email){
+
+        if (email!=null){
+            return gymRepository.getAllEnquiriesRegistration(email);
+        }
+        return null;
+    }
+
+}
+
