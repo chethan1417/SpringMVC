@@ -1,12 +1,7 @@
 package com.xworkz.chethan_gym.service;
 
-import com.xworkz.chethan_gym.dto.AdminDTO;
-import com.xworkz.chethan_gym.dto.EnquiryDTO;
-import com.xworkz.chethan_gym.dto.RegistrationDTO;
+import com.xworkz.chethan_gym.dto.*;
 import com.xworkz.chethan_gym.entity.*;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -32,5 +27,25 @@ public interface GymService {
 
     boolean updateUserPassword(String email, String newPassword);
 
-    boolean updateUserProfile(int reg_id, String name, String email, String ph , String age , String weight , String height , String plan);
+    boolean updateUserProfile(int reg_id, String name, String email, String ph , String age , String weight , String height , String plan , String filePath);
+
+    boolean onTrainers(TrainerDTO trainerDTO);
+
+    boolean onTime(TimeDTO timeDTO);
+
+    List<TrainersEntity> getAllTrainers();
+
+    List<TimeEntity> getSlots();
+
+    boolean updateSlotsForTrainers(String name, String slots);
+
+    boolean removeSlots(String name);
+
+    boolean updateSlotsForClients(String clientName, String trainerName, String slots);
+
+    List<RegistrationEntity> getAllClientsForTrainer(String trainerName);
+
+    boolean deleteTrainer(String trainerName);
+
+    boolean updateDAWForClients(String clientName, String dietPlan, String workoutPlan);
 }

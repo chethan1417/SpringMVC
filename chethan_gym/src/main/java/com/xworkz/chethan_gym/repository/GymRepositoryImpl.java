@@ -311,7 +311,7 @@ public class GymRepositoryImpl implements GymRepository {
 
 
     @Override
-    public boolean updateUserProfile(RegistrationEntity registrationEntity) {
+    public boolean updateUserProfile(RegistrationEntity registrationEntity , String filePath) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         try {
@@ -325,6 +325,8 @@ public class GymRepositoryImpl implements GymRepository {
             query.setParameter("weight",registrationEntity.getWeight());
             query.setParameter("height",registrationEntity.getHeight());
             query.setParameter("plan",registrationEntity.getPlan());
+            query.setParameter("filePath",filePath);
+
 
             int updatedRows = query.executeUpdate();
             transaction.commit();
@@ -340,6 +342,196 @@ public class GymRepositoryImpl implements GymRepository {
         }
     }
 
+    @Override
+    public boolean saveTrainers(TrainersEntity trainersEntity) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        System.out.println(trainersEntity);
+        try {
+            transaction.begin();
+            entityManager.persist(trainersEntity);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public boolean saveTime(TimeEntity timeEntity) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+
+        System.out.println("repooo"+timeEntity);
+        try {
+            transaction.begin();
+            entityManager.persist(timeEntity);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            entityManager.close();
+        }
+        return true;
+    }
+
+    @Override
+    public List<TrainersEntity> getAllTrainers() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            Query query = entityManager.createNamedQuery("getAllTrainers");
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public List<TimeEntity> getSlots() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            Query query = entityManager.createNamedQuery("getAllSlots");
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            entityManager.close();
+        }
+    }
+
+
+
+    @Override
+    public boolean updateSlotsForTrainers(TrainersEntity trainersEntity) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            Query query = entityManager.createNamedQuery("updateSlotsByName");
+            query.setParameter("name", trainersEntity.getName());
+            query.setParameter("slots", trainersEntity.getSlots());
+
+            int updatedRows = query.executeUpdate();
+            transaction.commit();
+            return updatedRows > 0;
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public boolean updateSlotsForClients(RegistrationEntity registrationEntity) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            Query query = entityManager.createNamedQuery("updateUserTrainerAndSlotByName");
+            query.setParameter("name", registrationEntity.getName());
+            query.setParameter("trainerName", registrationEntity.getTrainerName());
+            query.setParameter("slots", registrationEntity.getSlots());
+
+            int updatedRows = query.executeUpdate();
+            transaction.commit();
+            return updatedRows > 0;
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public List<RegistrationEntity> getClientsOfTrainer(String trainerName) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            Query query = entityManager.createNamedQuery("getAllClientsForTrainer");
+            query.setParameter("trainerName", trainerName);
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            entityManager.close();
+        }
+    }
+
+    @Override
+    public boolean deleteTrainer(String trainerName) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        boolean isDeleted = false;
+
+        try {
+            transaction.begin(); // Start transaction
+
+            Query query = entityManager.createNamedQuery("deleteTrainerByName");
+            query.setParameter("name", trainerName);
+
+            int rowsAffected = query.executeUpdate();
+            isDeleted = rowsAffected > 0;
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            entityManager.close();
+        }
+
+        return isDeleted;
+}
+
+
+
+    @Override
+    public boolean updateDAWForClients(RegistrationEntity registrationEntity) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            Query query = entityManager.createNamedQuery("updateClientDAWbyName");
+            query.setParameter("name", registrationEntity.getName());
+            query.setParameter("dietPlan", registrationEntity.getDietPlan());
+            query.setParameter("workoutPlan",registrationEntity.getWorkoutPlan());
+
+            int updatedRows = query.executeUpdate();
+            transaction.commit();
+            return updatedRows > 0;
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            entityManager.close();
+        }
+    }
 
 
 }

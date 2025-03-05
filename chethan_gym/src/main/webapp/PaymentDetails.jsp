@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +18,6 @@
             flex-direction: column;
             height: 100vh;
             margin: 0;
-            padding-top: 0px;
-            margin-top: 0px;
         }
 
         .navbar {
@@ -122,6 +121,7 @@
         <table class="table table-bordered table-striped table-hover">
             <thead class="thead-dark">
                 <tr>
+                    <th>Id</th>
                     <th>Name</th>
                     <th>Paid Amount</th>
                     <th>Balance</th>
@@ -129,13 +129,26 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${regUpdateEntityList}" var="regUpdateEntityList">
+                <c:set var="counter" value="1" />
+                <c:forEach items="${regUpdateEntityList}" var="regUpdateEntity">
                     <tr>
-                        <td>${regUpdateEntityList.name}</td>
-                        <td>${regUpdateEntityList.paidAmount}</td>
-                        <td>${regUpdateEntityList.balance}</td>
-                        <td>${regUpdateEntityList.updatedDateAndTime}</td>
+                        <td>${counter}</td>
+                        <td>${regUpdateEntity.name}</td>
+                        <td>${regUpdateEntity.paidAmount}</td>
+                        <td>${regUpdateEntity.balance}</td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${not empty regUpdateEntity.updatedDateAndTime}">
+                                    <fmt:parseDate value="${regUpdateEntity.updatedDateAndTime}" pattern="yyyy-MM-dd'T'HH:mm" var="formattedDate" />
+                                    <fmt:formatDate value="${formattedDate}" pattern="yyyy-MM-dd HH:mm:ss"/>
+                                </c:when>
+                                <c:otherwise>
+                                    N/A
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
                     </tr>
+                    <c:set var="counter" value="${counter + 1}" />
                 </c:forEach>
             </tbody>
         </table>

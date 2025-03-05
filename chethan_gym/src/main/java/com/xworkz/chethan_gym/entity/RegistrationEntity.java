@@ -13,7 +13,10 @@ import javax.persistence.*;
 @NamedQuery(name = "updateDetailsByRegId", query = "UPDATE RegistrationEntity cme " + "SET cme.packages = :package, " + "    cme.trainer = :trainer, " + "    cme.amount = :amount, " + "    cme.paidAmount = :paidAmount, " + "    cme.balance = :balance " + "WHERE cme.reg_id = :reg_id")
 @NamedQuery(name = "getAllEnquiriesRegistration", query = "SELECT cme FROM RegistrationEntity cme WHERE cme.email = :email")
 @NamedQuery(name = "updateUserPasswordByEmail", query = "UPDATE RegistrationEntity cme SET cme.password = :password ,cme.userLoginCount = :userLoginCount WHERE cme.email = :email")
-@NamedQuery(name = "updateUserProfileById", query = "UPDATE RegistrationEntity cme SET cme.name = :name ,cme.email = :email,cme.ph = :ph,cme.weight = :weight,cme.height = :height ,cme.age = :age,cme.plan = :plan WHERE cme.reg_id = :reg_id")
+@NamedQuery(name = "updateUserProfileById", query = "UPDATE RegistrationEntity cme SET cme.name = :name, cme.email = :email, cme.ph = :ph, cme.weight = :weight, cme.height = :height, cme.age = :age, cme.plan = :plan, cme.filePath = :filePath WHERE cme.reg_id = :reg_id")
+@NamedQuery(name = "updateUserTrainerAndSlotByName", query = "UPDATE RegistrationEntity cme SET cme.trainerName = :trainerName, cme.slots = :slots WHERE cme.name = :name")
+@NamedQuery(name = "getAllClientsForTrainer", query = "SELECT cme FROM RegistrationEntity cme WHERE cme.trainerName = :trainerName")
+@NamedQuery(name = "updateClientDAWbyName", query = "UPDATE RegistrationEntity cme SET cme.dietPlan = :dietPlan, cme.workoutPlan = :workoutPlan WHERE cme.name = :name")
 
 public class RegistrationEntity {
 
@@ -72,4 +75,20 @@ public class RegistrationEntity {
 
     @Column(name = "plan")
     private String plan;
+
+    @Column(name = "filePath")
+    private String filePath;
+
+    @Column(name = "trainerName")
+    private String trainerName;
+
+    @Column(name = "slots")
+    private String slots;
+
+    @Column(name = "dietPlan")
+    private String dietPlan;
+
+    @Column(name = "workoutPlan")
+    private String workoutPlan;
+
 }

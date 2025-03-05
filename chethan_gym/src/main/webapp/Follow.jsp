@@ -151,42 +151,74 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${enquiries}" var="enquiry">
-                    <tr>
-                        <td>${enquiry.enquiry_id}</td>
-                        <td>${enquiry.name}</td>
-                        <td>${enquiry.area}</td>
-                        <td>${enquiry.ph}</td>
-                        <td>${enquiry.distance}</td>
-                        <td>${enquiry.age}</td>
-                        <td>
-                            <form action="updateEnquiry" method="POST">
-                                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                <input type="hidden" name="enquiryId" value="${enquiry.enquiry_id}"/>
-                                <select class="form-control" name="status">
-                                    <c:forEach items="${status}" var="sta">
-                                        <option value="${sta}" ${sta == enquiry.status ? 'selected' : ''}>${sta}</option>
-                                    </c:forEach>
-                                </select>
-                        </td>
-                        <td>
-                                <textarea class="form-control" name="description">${enquiry.description}</textarea>
-                        </td>
-                        <td>
-                                <button type="submit" class="update-btn">Update</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="viewDetails" method="POST">
-                                <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                                <input type="hidden" name="enquiryId" value="${enquiry.enquiry_id}" />
-                                <button type="submit" class="view-btn">View Details</button>
-                            </form>
-                        </td>
-                    </tr>
-                </c:forEach>
+               <c:forEach items="${enquiries}" var="enquiry" varStatus="loop">
+                   <tr>
+                       <td>${loop.index + 1}</td>
+                       <td>${enquiry.name}</td>
+                       <td>${enquiry.area}</td>
+                       <td>${enquiry.ph}</td>
+                       <td>${enquiry.distance}</td>
+                       <td>${enquiry.age}</td>
+                       <td>
+                           <form action="updateEnquiry" method="POST">
+                               <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                               <input type="hidden" name="enquiryId" value="${enquiry.enquiry_id}"/>
+                               <select class="form-control" name="status">
+                                   <c:forEach items="${status}" var="sta">
+                                       <option value="${sta}" ${sta == enquiry.status ? 'selected' : ''}>${sta}</option>
+                                   </c:forEach>
+                               </select>
+                       </td>
+                      <td>
+                          <textarea class="form-control description-input" name="description">${enquiry.description}</textarea>
+                          <small class="description-feedback"></small>
+                      </td>
+                       <td>
+                               <button type="submit" class="update-btn">Update</button>
+                           </form>
+                       </td>
+                       <td>
+                           <form action="viewDetails" method="POST">
+                               <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                               <input type="hidden" name="enquiryId" value="${enquiry.enquiry_id}" />
+                               <button type="submit" class="view-btn">View Details</button>
+                           </form>
+                       </td>
+                   </tr>
+               </c:forEach>
+
             </tbody>
         </table>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".description-input").on("input", function () {
+                let description = $(this).val();
+                let regex = /^[A-Za-z\s]{3,}$/; // Only English alphabets and min 3 characters
+                let feedback = $(this).siblings(".description-feedback");
+
+                if (!regex.test(description)) {
+                    feedback.text("Only English letters allowed, min 3 characters.").css("color", "red");
+                    $(this).addClass("is-invalid");
+                } else {
+                    feedback.text("");
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                }
+            });
+
+            $("form").on("submit", function (e) {
+                let descriptionInput = $(this).find(".description-input");
+                let description = descriptionInput.val();
+                let regex = /^[A-Za-z\s]{3,}$/;
+
+                if (!regex.test(description)) {
+                    alert("Invalid description. Only English letters allowed, min 3 characters.");
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

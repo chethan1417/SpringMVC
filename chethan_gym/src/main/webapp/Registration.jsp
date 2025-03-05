@@ -167,20 +167,19 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="name">Name:</label>
-                    <input type="text" name="name" class="form-control" id="name" required>
+   <input type="text" name="name" class="form-control" id="name" required onchange="onName()">
                     <span id="nameError" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="email">Email:</label>
                     <input type="text" name="email" class="form-control" id="email" onchange="onEmail()" required>
-                    <span id="displayEmail" class="error"></span>
                     <span id="emailError" class="text-danger"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="ph">Phone:</label>
-                    <input type="text" name="ph" class="form-control" id="ph" required>
+                <input type="text" name="ph" class="form-control" id="ph" required onchange="onPhone()">
                     <span id="phoneError" class="text-danger"></span>
                 </div>
             </div>
@@ -220,28 +219,28 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="discount">Discount (%):</label>
-                    <input type="number" name="discount" class="form-control" id="discount" required>
+                    <input type="number" name="discount" class="form-control" id="discount" required  onchange="validateDiscount()">
                     <span id="discountError" class="text-danger"></span>
                 </div>
             </div>
 
- <div class="form-group col-md-6">
-                    <label for="installment">Installment:</label>
-                    <select name="installment" class="form-control" id="installment" required>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                        <option value="12">12 (Monthly)</option>
-                    </select>
-                </div>
+            <div class="form-group col-md-6">
+                <label for="installment">Installment:</label>
+                <select name="installment" class="form-control" id="installment" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="12">12 (Monthly)</option>
+                </select>
+            </div>
 
             <div class="row">
 
-             <div class="form-group col-md-6">
-                 <label for="paidAmount">Paid Amount:</label>
-                 <input type="number" name="paidAmount" class="form-control" id="paidAmount" required>
-             </div>
-
+                <div class="form-group col-md-6">
+                    <label for="paidAmount">Paid Amount:</label>
+                    <input type="number" name="paidAmount" class="form-control" id="paidAmount" required  onchange="validatePaidAmount()">
+                                    <span id="paidAmountError" class="error"></span>
+                </div>
 
                 <div class="form-group col-md-6">
                     <label for="balance">Balance:</label>
@@ -256,114 +255,139 @@
     <img src="https://www.pngall.com/wp-content/uploads/13/Dragon-Ball-PNG-Image-HD.png"
          alt="Fitness Image" class="fitness-image" style="width: 6cm; height: 6cm; position: relative; top: -13cm; right:-30cm;">
 
-    <script>
-        $(document).ready(function() {
-            var packageDetails = {
-                'Basic': 1000,
-                'Standard': 1500,
-                'Premium': 2000,
-                'VIP': 3000
-            };
+   <script>
+       $(document).ready(function() {
+           var packageDetails = {
+               'Basic': 1000,
+               'Standard': 1500,
+               'Premium': 2000,
+               'VIP': 3000
+           };
 
-            $('#packages').change(function() {
-                var selectedPackage = $(this).val();
-                var amount = packageDetails[selectedPackage] || 0;
+           $('#packages').change(function() {
+               var selectedPackage = $(this).val();
+               var amount = packageDetails[selectedPackage] || 0;
 
-                $('#amount').val(amount * 12);
-                if (selectedPackage == 'Premium' || selectedPackage == 'VIP') {
-                    $('#trainerYes').prop('checked', true);
-                    $('#trainerNo').prop('checked', false);
-                } else {
-                    $('#trainerNo').prop('checked', true);
-                    $('#trainerYes').prop('checked', false);
-                }
+               $('#amount').val(amount * 12);
+               if (selectedPackage == 'Premium' || selectedPackage == 'VIP') {
+                   $('#trainerYes').prop('checked', true);
+                   $('#trainerNo').prop('checked', false);
+               } else {
+                   $('#trainerNo').prop('checked', true);
+                   $('#trainerYes').prop('checked', false);
+               }
 
-                $('#balance').val('');
-            });
+               $('#balance').val('');
+           });
 
-            $('#discount, #installment, #paidAmount').on('input change', function() {
-                var amount = parseFloat($('#amount').val()) || 0;
-                var discountPercentage = parseFloat($('#discount').val()) || 0;
-                var paidAmount = parseFloat($('#paidAmount').val()) || 0;
-                var installmentPeriod = parseFloat($('#installment').val()) || 1;
+           $('#discount, #installment, #paidAmount').on('input change', function() {
+               var amount = parseFloat($('#amount').val()) || 0;
+               var discountPercentage = parseFloat($('#discount').val()) || 0;
+               var paidAmount = parseFloat($('#paidAmount').val()) || 0;
+               var installmentPeriod = parseFloat($('#installment').val()) || 1;
 
-                if (amount > 0 && discountPercentage >= 0 && installmentPeriod > 0) {
-                    var discountAmount = (amount * (discountPercentage / 100));
-                    var finalAmount = amount - discountAmount;
-                    var beforeAdvance = finalAmount - paidAmount;
-                    var balance = beforeAdvance / installmentPeriod;
+               if (amount > 0 && discountPercentage >= 0 && installmentPeriod > 0) {
+                   var discountAmount = (amount * (discountPercentage / 100));
+                   var finalAmount = amount - discountAmount;
+                   var beforeAdvance = finalAmount - paidAmount;
+                   var balance = beforeAdvance / installmentPeriod;
 
-                    $('#balance').val(balance.toFixed(2));
-                }
-            });
+                   $('#balance').val(balance.toFixed(2));
+               }
+           });
+       });
+   </script>
+<script>
+       function onName() {
+           const name = document.getElementById("name").value.trim();
+           const nameError = document.getElementById("nameError");
+           const nameRegex = /^[A-Za-z\s]+$/;
 
-        });
+           if (name.length < 3) {
+               nameError.textContent = "Name must be at least 3 characters long.";
+           } else if (!nameRegex.test(name)) {
+               nameError.textContent = "Name must contain only English alphabets.";
+           } else {
+               nameError.textContent = "";
+           }
+       }
 
-        function onEmail() {
-            var email = document.getElementById('email').value;
-            if (email !== "") {
-                var xhttp = new XMLHttpRequest();
-                xhttp.open("GET", "http://localhost:8080/chethan_gym/email/" + email, true);
-                xhttp.send();
-                xhttp.onload = function() {
-                    document.getElementById("displayEmail").innerHTML = this.responseText;
-                }
-            }
-        }
+       function onPhone() {
+           const phone = document.getElementById("ph").value.trim();
+           const phoneError = document.getElementById("phoneError");
+const phoneRegex = /^(?:\+91[-\s]?)?[6789]\d{9}$/;
+           if (!phoneRegex.test(phone)) {
+               phoneError.textContent = "Enter a valid contact number.";
+           } else {
+               phoneError.textContent = "";
+               var xhttp = new XMLHttpRequest();
+               xhttp.open("GET", "http://localhost:8080/chethan_gym/phone/" + phone, true);
+               xhttp.send();
+               xhttp.onload = function () {
+                   console.log("Server response:", this.responseText);
+                   document.getElementById("displayPhone").innerHTML = this.responseText;
+               };
+           }
+       }
 
-        function validateForm() {
-            var isValid = true;
+function onEmail() {
+    const email = document.getElementById("email").value.trim();
+    const emailError = document.getElementById("emailError");
 
-        var name = document.getElementById("name").value;
-        if (name === "") {
-            document.getElementById("nameError").innerText = "Name is required.";
-            isValid = false;
-        } else if (name.length < 3) {
-            document.getElementById("nameError").innerText = "Name must be at least 3 characters.";
-            isValid = false;
-        } else if (!/^[a-zA-Z\s]+$/.test(name)) {
-            document.getElementById("nameError").innerText = "Name must contain only letters and spaces.";
-            isValid = false;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|gmail\.in)$/;
+
+    if (!emailRegex.test(email)) {
+        emailError.textContent = "Please enter a valid email address";
+    } else {
+        emailError.textContent = "";
+    }
+}
+
+
+       document.getElementById("enquiryForm").addEventListener("submit", function (event) {
+           let valid = true;
+
+           onName();
+           onPhone();
+           onEmail();
+
+           if (document.querySelector(".error").textContent !== "") {
+               event.preventDefault();
+           }
+       });
+   </script>
+
+<script>
+    function validateDiscount() {
+        const discount = document.getElementById("discount").value.trim();
+        const discountError = document.getElementById("discountError");
+
+        if (discount === "") {
+            discountError.textContent = "Discount is required.";
+        } else if (!/^[0-9]+$/.test(discount) || parseInt(discount) < 1 || parseInt(discount) > 100) {
+            discountError.textContent = "Discount must be between 1 and 100.";
         } else {
-            document.getElementById("nameError").innerText = "";
+            discountError.textContent = "";
         }
+    }
 
-            var email = document.getElementById("email").value;
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email === "") {
-                document.getElementById("emailError").innerText = "Email is required.";
-                isValid = false;
-            } else if (!emailPattern.test(email)) {
-                document.getElementById("emailError").innerText = "Invalid email format.";
-                isValid = false;
-            } else {
-                document.getElementById("emailError").innerText = "";
-            }
+    function validatePaidAmount() {
+        const paidAmount = document.getElementById("paidAmount").value.trim();
+        const paidAmountError = document.getElementById("paidAmountError");
 
-            var phone = document.getElementById("ph").value;
-            if (phone === "") {
-                document.getElementById("phoneError").innerText = "Phone number is required.";
-                isValid = false;
-            } else if (!/^\d{10}$/.test(phone)) {
-                document.getElementById("phoneError").innerText = "Phone number must be 10 digits.";
-                isValid = false;
-            } else {
-                document.getElementById("phoneError").innerText = "";
-            }
-
-                    var discount = document.getElementById("discount").value;
-                    if (discount === "") {
-                        document.getElementById("discountError").innerText = "Discount is required.";
-                        isValid = false;
-                    } else if (isNaN(discount) || discount < 0 || discount > 100) {
-                        document.getElementById("discountError").innerText = "Discount must be a valid number between 0 and 100.";
-                        isValid = false;
-                    } else {
-                        document.getElementById("discountError").innerText = "";
-                    }
-
-            return isValid;
+        if (paidAmount === "") {
+            paidAmountError.textContent = "Paid Amount is required.";
+        } else if (!/^[0-9]+$/.test(paidAmount) || parseInt(paidAmount) < 1 || parseInt(paidAmount) > 50000) {
+            paidAmountError.textContent = "Paid Amount must be between 1 and 50000.";
+        } else {
+            paidAmountError.textContent = "";
         }
-    </script>
+    }
+
+    $(document).ready(function () {
+        $('#discount').on('input', validateDiscount);
+        $('#paidAmount').on('input', validatePaidAmount);
+    });
+</script>
 </body>
 </html>

@@ -144,6 +144,8 @@
             <li><a href="http://localhost:8080/chethan_gym/follow">Follow</a></li>
             <li><a href="http://localhost:8080/chethan_gym/registration">Registration</a></li>
             <li><a href="http://localhost:8080/chethan_gym/update">Update</a></li>
+            <li><a href="http://localhost:8080/chethan_gym/slotDetails">Slots</a></li>
+
         </ul>
     </nav>
 

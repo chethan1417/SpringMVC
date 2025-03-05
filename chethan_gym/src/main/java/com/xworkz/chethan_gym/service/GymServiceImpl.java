@@ -1,9 +1,7 @@
 package com.xworkz.chethan_gym.service;
 
 import com.xworkz.chethan_gym.constants.StatusEnum;
-import com.xworkz.chethan_gym.dto.AdminDTO;
-import com.xworkz.chethan_gym.dto.EnquiryDTO;
-import com.xworkz.chethan_gym.dto.RegistrationDTO;
+import com.xworkz.chethan_gym.dto.*;
 import com.xworkz.chethan_gym.entity.*;
 import com.xworkz.chethan_gym.repository.GymRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +32,10 @@ public class GymServiceImpl implements GymService {
 
     EnquiryEntity enquiryEntity = new EnquiryEntity();
     RegistrationEntity registrationEntity = new RegistrationEntity();
+
+    TrainersEntity trainersEntity=new TrainersEntity();
+
+    TimeEntity timeEntity = new TimeEntity();
 
     BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
@@ -255,7 +257,7 @@ public class GymServiceImpl implements GymService {
     }
 
     @Override
-    public boolean updateUserProfile(int reg_id , String name , String email , String ph , String age , String weight , String height , String plan) {
+    public boolean updateUserProfile(int reg_id , String name , String email , String ph , String age , String weight , String height , String plan , String filePath) {
 
         if (reg_id!=0){
             registrationEntity.setReg_id(reg_id);
@@ -266,11 +268,171 @@ public class GymServiceImpl implements GymService {
             registrationEntity.setWeight(weight);
             registrationEntity.setHeight(height);
             registrationEntity.setPlan(plan);
-            gymRepository.updateUserProfile(registrationEntity);
+            gymRepository.updateUserProfile(registrationEntity , filePath);
             return true;
         }
         return false;
     }
+
+    @Override
+    public boolean onTrainers(TrainerDTO trainerDTO)  {
+        if (trainerDTO!=null){
+            trainersEntity.setName(trainerDTO.getName());
+            trainersEntity.setPh(trainerDTO.getPh());
+            gymRepository.saveTrainers(trainersEntity);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onTime(TimeDTO timeDTO)  {
+        if (timeDTO!=null){
+            timeEntity.setStartTime(timeDTO.getStartTime());
+            timeEntity.setEndTime(timeDTO.getEndTime());
+            timeEntity.setDuration(timeDTO.getDuration());
+            gymRepository.saveTime(timeEntity);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public List<TrainersEntity> getAllTrainers() {
+        List<TrainersEntity> trainers = gymRepository.getAllTrainers();
+        return trainers;
+    }
+
+    @Override
+    public List<TimeEntity> getSlots() {
+        List<TimeEntity> slots = gymRepository.getSlots();
+        return slots;
+    }
+
+    @Override
+    public boolean updateSlotsForTrainers(String name, String slots){
+
+        if (name!=null) {
+            trainersEntity.setName(name);
+            trainersEntity.setSlots(slots);
+            gymRepository.updateSlotsForTrainers(trainersEntity);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean removeSlots(String name){
+
+        if (name!=null) {
+            trainersEntity.setName(name);
+            trainersEntity.setSlots(null);
+            gymRepository.updateSlotsForTrainers(trainersEntity);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateSlotsForClients(String clientName, String trainerName, String slots){
+
+        if (clientName!=null) {
+            registrationEntity.setName(clientName);
+            registrationEntity.setSlots(slots);
+            registrationEntity.setTrainerName(trainerName);
+            gymRepository.updateSlotsForClients(registrationEntity);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public List<RegistrationEntity> getAllClientsForTrainer(String trainerName) {
+        List<RegistrationEntity> clients = gymRepository.getClientsOfTrainer(trainerName);
+        return clients;
+    }
+
+    @Override
+    public boolean deleteTrainer(String trainerName) {
+        boolean deleted =gymRepository.deleteTrainer(trainerName);
+        if (deleted){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateDAWForClients(String clientName, String dietPlan, String workoutPlan){
+
+        if (clientName!=null) {
+            registrationEntity.setName(clientName);
+           if (dietPlan.equals("VEG_WEIGHT_GAIN")){
+               registrationEntity.setDietPlan("Breakfast: Oats with whole milk, almonds, banana, peanut butter toast\\n\" +\n" +
+                       "        \"Mid-Morning Snack: Greek yogurt with honey and nuts, dates\\n\" +\n" +
+                       "        \"Lunch: Paneer curry, brown rice, mixed vegetable sabzi, dal, avocado salad\\n\" +\n" +
+                       "        \"Afternoon Snack: Protein smoothie (banana, peanut butter, oats, milk, whey protein)\\n\" +\n" +
+                       "        \"Dinner: Quinoa with chickpeas, sautéed vegetables, olive oil dressing\\n\" +\n" +
+                       "        \"Post-Dinner: Cottage cheese (paneer), handful of nuts, dark chocolate");
+               registrationEntity.setWorkoutPlan("Day 1: Strength Training (Squats, Deadlifts, Bench Press, Shoulder Press)\\n\" +\n" +
+                       "        \"Day 2: Cardio + Core (Cycling, Planks, Russian Twists, Hanging Leg Raises)\\n\" +\n" +
+                       "        \"Day 3: Upper Body (Pull-ups, Dumbbell Rows, Bicep Curls, Tricep Dips)\\n\" +\n" +
+                       "        \"Day 4: Rest or Active Recovery (Yoga, Stretching)\\n\" +\n" +
+                       "        \"Day 5: Lower Body (Lunges, Leg Press, Calf Raises, Hamstring Curls)\\n\" +\n" +
+                       "        \"Day 6: Full Body Workout (Burpees, Kettlebell Swings, Deadlifts, Squat Jumps)\\n\" +\n" +
+                       "        \"Day 7: Rest");
+           }
+           if (dietPlan.equals("VEG_WEIGHT_LOSS")){
+               registrationEntity.setDietPlan("Breakfast: Oats with chia seeds, flaxseeds, and almond milk\\n\" +\n" +
+                       "        \"Mid-Morning Snack: Green smoothie (spinach, cucumber, chia seeds, lemon)\\n\" +\n" +
+                       "        \"Lunch: Dal, quinoa, mixed vegetable stir-fry, cucumber salad\\n\" +\n" +
+                       "        \"Afternoon Snack: Handful of almonds, green tea\\n\" +\n" +
+                       "        \"Dinner: Grilled tofu or paneer, sautéed vegetables, lemon water\\n\" +\n" +
+                       "        \"Post-Dinner: Greek yogurt with berries");
+               registrationEntity.setWorkoutPlan("Day 1: HIIT (Jump Squats, Mountain Climbers, Burpees, Plank Holds)\\n\" +\n" +
+                       "        \"Day 2: Cardio (Running, Cycling, Jump Rope)\\n\" +\n" +
+                       "        \"Day 3: Strength Training (Squats, Deadlifts, Dumbbell Press, Shoulder Press)\\n\" +\n" +
+                       "        \"Day 4: Core & Flexibility (Yoga, Pilates, Ab Workouts)\\n\" +\n" +
+                       "        \"Day 5: Full Body Circuit (Push-ups, Kettlebell Swings, Box Jumps, Sled Pushes)\\n\" +\n" +
+                       "        \"Day 6: Cardio + Endurance (Rowing, Stair Climbing, Sprint Intervals)\\n\" +\n" +
+                       "        \"Day 7: Rest or Active Recovery");
+           }
+           if (dietPlan.equals("NON_VEG_WEIGHT_GAIN")){
+               registrationEntity.setDietPlan("Breakfast: Scrambled eggs with whole wheat toast, peanut butter, milk\\n\" +\n" +
+                       "        \"Mid-Morning Snack: Boiled eggs, nuts (almonds, walnuts), Greek yogurt\\n\" +\n" +
+                       "        \"Lunch: Grilled chicken breast, brown rice, mixed greens, olive oil dressing\\n\" +\n" +
+                       "        \"Afternoon Snack: Protein shake (banana, oats, whey protein, peanut butter)\\n\" +\n" +
+                       "        \"Dinner: Grilled salmon, mashed sweet potatoes, sautéed spinach\\n\" +\n" +
+                       "        \"Post-Dinner: Cottage cheese or boiled eggs, handful of nuts");
+               registrationEntity.setWorkoutPlan("Day 1: Strength Training (Squats, Deadlifts, Bench Press, Shoulder Press)\\n\" +\n" +
+                       "        \"Day 2: Cardio + Core (Cycling, Planks, Russian Twists, Hanging Leg Raises)\\n\" +\n" +
+                       "        \"Day 3: Upper Body (Pull-ups, Dumbbell Rows, Bicep Curls, Tricep Dips)\\n\" +\n" +
+                       "        \"Day 4: Rest or Active Recovery (Yoga, Stretching)\\n\" +\n" +
+                       "        \"Day 5: Lower Body (Lunges, Leg Press, Calf Raises, Hamstring Curls)\\n\" +\n" +
+                       "        \"Day 6: Full Body Workout (Burpees, Kettlebell Swings, Deadlifts, Squat Jumps)\\n\" +\n" +
+                       "        \"Day 7: Rest");
+           }
+           if (dietPlan.equals("NON_VEG_WEIGHT_LOSS")){
+               registrationEntity.setDietPlan("Breakfast: Boiled eggs with avocado toast, black coffee\\n\" +\n" +
+                       "        \"Mid-Morning Snack: Green smoothie (spinach, ginger, chia seeds)\\n\" +\n" +
+                       "        \"Lunch: Grilled chicken or fish, quinoa, steamed vegetables\\n\" +\n" +
+                       "        \"Afternoon Snack: Handful of almonds, green tea\\n\" +\n" +
+                       "        \"Dinner: Grilled fish or boiled eggs, sautéed vegetables, lemon water\\n\" +\n" +
+                       "        \"Post-Dinner: Greek yogurt with nuts");
+               registrationEntity.setWorkoutPlan("Day 1: HIIT (Jump Squats, Mountain Climbers, Burpees, Plank Holds)\\n\" +\n" +
+                       "        \"Day 2: Cardio (Running, Cycling, Jump Rope)\\n\" +\n" +
+                       "        \"Day 3: Strength Training (Squats, Deadlifts, Dumbbell Press, Shoulder Press)\\n\" +\n" +
+                       "        \"Day 4: Core & Flexibility (Yoga, Pilates, Ab Workouts)\\n\" +\n" +
+                       "        \"Day 5: Full Body Circuit (Push-ups, Kettlebell Swings, Box Jumps, Sled Pushes)\\n\" +\n" +
+                       "        \"Day 6: Cardio + Endurance (Rowing, Stair Climbing, Sprint Intervals)\\n\" +\n" +
+                       "        \"Day 7: Rest or Active Recovery");
+
+           }
+           gymRepository.updateDAWForClients(registrationEntity);
+           return true;
+        }
+        return false;
+    }
+
 }
 
 

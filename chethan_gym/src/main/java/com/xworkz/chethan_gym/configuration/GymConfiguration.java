@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
@@ -24,6 +25,9 @@ public class GymConfiguration {
     public GymConfiguration(){
         System.out.println("created GymConfiguration");
     }
+
+    private int imgSize= 18*1024*1024 ;
+
 
     @Bean
     public DataSource dataSource(){
@@ -43,5 +47,14 @@ public class GymConfiguration {
         localContainerEntityManagerFactoryBean.setDataSource(dataSource());
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         return localContainerEntityManagerFactoryBean;
+    }
+
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver multipartResolver(){
+
+        CommonsMultipartResolver commonsMultipartResolver=new CommonsMultipartResolver();
+        commonsMultipartResolver.setMaxUploadSize(imgSize);
+        commonsMultipartResolver.setMaxInMemorySize(imgSize);
+        return commonsMultipartResolver;
     }
 }

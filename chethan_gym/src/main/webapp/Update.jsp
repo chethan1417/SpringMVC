@@ -24,6 +24,7 @@
             width: 600px;
             max-height: 700px;
             overflow-y: auto;
+            margin-top: 150px;
             margin-right: 450px;
         }
 
@@ -66,17 +67,27 @@
         }
 
         .btn {
-            border-radius: 25px;
-            height: 45px;
-            font-size: 18px;
-            background-color: #1e3a8a;
-            color: white;
-            border: none;
-        }
+                                 border-radius: 25px;
+                                 height: 45px;
+                                 font-size: 18px;
+                                 background-color: #1e3a8a;
+                                 color: white;
+                                 border: none;
+                             }
 
-        .btn:hover {
-            background-color: #143362;
-        }
+                             .btn:hover {
+                                 background-color: #143362;
+                             }
+
+                             .btn-search {
+                                 font-size: 12px;  /* Smaller font size */
+                                 padding: 5px 10px; /* Smaller padding */
+                                 height: 30px; /* Smaller height */
+                             }
+
+                             .btn-gap {
+                                 margin-top: 10px; /* Add a gap between the buttons */
+                             }
 
         .form-check-inline {
             margin-right: 15px;
@@ -149,24 +160,24 @@
         <a href="#" class="logo"><img src="https://www.pngall.com/wp-content/uploads/13/Dragon-Ball-PNG-Image-HD.png" alt="Gym Logo"></a>
         <ul>
             <li><a href="Success.jsp">Home</a></li>
-            <li><a href="Enquiry.jsp">Enquiry</a></li>
-            <li><a href="http://localhost:8080/chethan_gym/follow">Follow</a></li>
-            <li><a href="http://localhost:8080/chethan_gym/registration">Registration</a></li>
+            <li><a href="ClientSlot.jsp">Client Slot</a></li>
+            <li><a href="AssignDAW.jsp">Assign Diet</a></li>
+
         </ul>
     </nav>
 
     <div class="form-container">
         <h2 class="text-center" style="color: #1e3a8a;">Update Form</h2>
         <form action="update" method="post">
-
+<h3 class="text-danger text-center">${noEmail}</h3>
         <div class="form-group col-md-6">
             <label for="email">Search Email:</label>
             <input type="text" name="email" class="form-control" id="email" >
             <span id="displayEmail" class="error"></span>
-            <button type="button" class="btn btn-primary" onclick="searchEmail()">Search</button>
+            <button type="button" class="btn btn-primary btn-search" onclick="searchEmail()">Search</button>
         </div>
 
-<div class="form-group">
+        <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" name="name" class="form-control" id="name" required value="${registrationEntity.name}">
         </div>
@@ -176,30 +187,22 @@
             <input type="number" name="reg_id" class="form-control" id="reg_id" required value="${registrationEntity.reg_id}">
         </div>
 
-
         <div class="form-group">
             <label for="packages">Package:</label>
                 <input type="text" name="packages" class="form-control" id="packages" required value="${registrationEntity.packages}">
         </div>
 
         <div class="form-group">
-            <label for="trainer">Personal Trainer:</label>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="trainer" value="yes" class="form-check-input" id="trainerYes" required>
-                <label class="form-check-label" for="trainerYes">Yes</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="trainer" value="no" class="form-check-input" id="trainerNo" required>
-                <label class="form-check-label" for="trainerNo">No</label>
-            </div>
-        </div>
+                    <label for="trainer">Trainer:</label>
+                    <input type="text" name="trainer" class="form-control" id="trainer" required value="${registrationEntity.trainer}">
+                </div>
 
         <div class="form-group">
             <label for="amount">Amount:</label>
             <input type="number" name="amount" class="form-control" id="amount" required value="${registrationEntity.amount}">
         </div>
 
-<div class="form-group">
+        <div class="form-group">
              <label for="lastPaidAmount">Last Payment:</label>
              <input type="number" name="lastPaidAmount" class="form-control" id="lastPaidAmount" required value="${registrationEntity.paidAmount}">
          </div>
@@ -218,13 +221,15 @@
             <label for="balance">Balance:</label>
             <input type="number" name="balance" class="form-control" id="balance" required>
         </div>
+            <h6>${error}</h6>
+                        <h6>${errorMessage}</h6>
 
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
     </form>
 
     <form action="viewPaymentDetails" method="post">
         <input type="hidden" name="reg_id" value="${registrationEntity.reg_id}">
-        <button type="submit" class="btn btn-secondary btn-block">View Payment Details</button>
+        <button type="submit" class="btn btn-secondary btn-block btn-gap">View Payment Details</button>
     </form>
 
     </div>
@@ -252,6 +257,18 @@
             }
         }
     </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#paidAmount').on('input', function () {
+            var oldBalance = parseFloat($('#oldBalance').val()) || 0;
+            var paidAmount = parseFloat($(this).val()) || 0;
+            var balance = oldBalance - paidAmount;
+
+            $('#balance').val(balance);
+        });
+    });
+</script>
 
 </body>
 </html>

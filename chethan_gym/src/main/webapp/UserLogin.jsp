@@ -95,6 +95,7 @@
                 <input type="password" name="password" class="form-control" id="password" required>
                 <small id="passwordError" class="error"></small>
             </div>
+            <h4>${noMatch}</h4>
             <button type="submit" class="btn btn-primary btn-block" style="background-color:black;">Login</button>
             <div class="forgot-password">
                 <a href="UpdateUserPassword.jsp">Forgot Password?</a>

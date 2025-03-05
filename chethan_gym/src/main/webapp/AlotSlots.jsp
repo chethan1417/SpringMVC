@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Enquiry</title>
+    <title>Alottment</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -193,45 +193,33 @@
         <a href="#" class="logo"><img src="https://www.pngall.com/wp-content/uploads/13/Dragon-Ball-PNG-Image-HD.png" alt="Gym Logo"></a>
         <ul>
             <li><a href="Success.jsp">Home</a></li>
-            <li><a href="http://localhost:8080/chethan_gym/follow">Follow</a></li>
-            <li><a href="http://localhost:8080/chethan_gym/registration">Registration</a></li>
-            <li><a href="http://localhost:8080/chethan_gym/update">Update</a></li>
         </ul>
     </nav>
 
     <div class="form-container">
-        <h2 class="text-center" style="color:darkblue; margin-bottom: 1.5rem;">Enquiry Form</h2>
-        <form id="enquiryForm" action="enquiry" method="post">
+        <h2 class="text-center" style="color:darkblue; margin-bottom: 1.5rem;">Allotment</h2>
+<form id="allotmentForm" action="allotment" method="post" >
             <div class="form-group">
-                <label for="name">Name:</label>
-                <i class="fas fa-user input-icon"></i>
-   <input type="text" name="name" class="form-control" id="name" required onchange="onName()">
-                <span id="nameError" class="error"></span>
+                <label for="trainer">Trainer:</label>
+                <select name="trainer" class="form-control" id="trainer" required>
+                    <option value="">--Select Trainer--</option>
+                    <c:forEach var="trainer" items="${trainersEntities}">
+                        <option value="${trainer.name}">${trainer.name}</option>
+                    </c:forEach>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="area">Area:</label>
-                <i class="fas fa-map-marker-alt input-icon"></i>
-                <input type="text" name="area" class="form-control" id="area" required onchange="onArea()">
-                <span id="areaError" class="error"></span>
-            </div>
-            <div class="form-group">
-                <label for="ph">Phone:</label>
-                <i class="fas fa-phone-alt input-icon"></i>
-                <input type="text" name="ph" class="form-control" id="ph" required onchange="onPhone()">
-                <span id="displayPhone" class="error"></span>
-            </div>
-            <div class="form-group">
-                <label for="distance">Distance:</label>
-                <i class="fas fa-road input-icon"></i>
-                <input type="text" name="distance" class="form-control" id="distance" required onchange="onDistance()">
-                <span id="distanceError" class="error"></span>
-            </div>
-            <div class="form-group">
-                <label for="age">Age:</label>
-                <i class="fas fa-calendar-alt input-icon"></i>
-                <input type="number" name="age" class="form-control" id="age" required onchange="onAge()">
-                <span id="ageError" class="error"></span>
-            </div>
+
+        <div class="form-group">
+                <label for="slot">Slot:</label>
+               <select name="slot" class="form-control" id="slot" required>
+                    <option value="">--Assign Slot--</option>
+                    <c:forEach var="slots" items="${timeEntities}">
+                        <option value="${slots.startTime} - ${slots.endTime}">${slots.startTime} - ${slots.endTime}</option>
+                    </c:forEach>
+                </select>
+                  </div>
+            <h6>${error}</h6>
+
             <button type="submit" class="btn btn-primary btn-block" style="background-color:#1e3a8a;">Submit</button>
         </form>
     </div>
@@ -239,83 +227,6 @@
     <img src="https://www.pngall.com/wp-content/uploads/13/Dragon-Ball-PNG-Image-HD.png"
          alt="Fitness Image" class="fitness-image" style="width: 6cm; height: 6cm; position: relative; top: -3cm; right: -6cm;">
 
-    <div class="journey-heading">
-        START YOUR <span class="fitness-journey">FITNESS JOURNEY</span>
-    </div>
-
-   <script>
-       function onName() {
-           const name = document.getElementById("name").value.trim();
-           const nameError = document.getElementById("nameError");
-           const nameRegex = /^[A-Za-z\s]+$/;
-
-           if (name.length < 3) {
-               nameError.textContent = "Name must be at least 3 characters long.";
-           } else if (!nameRegex.test(name)) {
-               nameError.textContent = "Name must contain only English alphabets.";
-           } else {
-               nameError.textContent = "";
-           }
-       }
-
-
-       function onArea() {
-           const area = document.getElementById("area").value.trim();
-           const areaError = document.getElementById("areaError");
-           areaError.textContent = area.length < 3 ? "Area must be at least 3 characters long." : "";
-           const areaRegex = /^[A-Za-z\s]+$/;
-
-if (!areaRegex.test(area)) {
-               areaError.textContent = "Area must contain only English alphabets.";
-           } else {
-               areaError.textContent = "";
-           }
-
-       }
-
-       function onPhone() {
-           const phone = document.getElementById("ph").value.trim();
-           const phoneError = document.getElementById("displayPhone");
-const phoneRegex = /^(?:\+91[-\s]?)?[6789]\d{9}$/;
-           if (!phoneRegex.test(phone)) {
-               phoneError.textContent = "Enter a valid contact number.";
-           } else {
-               phoneError.textContent = "";
-               var xhttp = new XMLHttpRequest();
-               xhttp.open("GET", "http://localhost:8080/chethan_gym/phone/" + phone, true);
-               xhttp.send();
-               xhttp.onload = function () {
-                   document.getElementById("displayPhone").innerHTML = this.responseText;
-               }
-           }
-       }
-
-       function onDistance() {
-           const distance = document.getElementById("distance").value.trim();
-           const distanceError = document.getElementById("distanceError");
-           distanceError.textContent = isNaN(distance) || distance <= 0 || distance >= 101 ? "Distance must be 1-100." : "";
-       }
-
-       function onAge() {
-           const age = document.getElementById("age").value.trim();
-           const ageError = document.getElementById("ageError");
-           ageError.textContent = isNaN(age) || age < 10 || age > 100 ? "Age must be between 10 and 100." : "";
-       }
-
-       document.getElementById("enquiryForm").addEventListener("submit", function (event) {
-           let valid = true;
-
-           onName();
-           onArea();
-           onPhone();
-           onDistance();
-           onAge();
-
-           if (document.querySelector(".error").textContent !== "") {
-               event.preventDefault();
-           }
-       });
-   </script>
 
 </body>
 </html>

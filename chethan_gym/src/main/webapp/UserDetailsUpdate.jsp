@@ -123,7 +123,7 @@
             margin-right: 40px;
         }
 
-        .navbar ul li a {
+        .navbar ul a {
             color: white;
             font-size: 18px;
             font-weight: 600;
@@ -142,16 +142,24 @@
             background-color: #007bff;
             color: white;
         }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+
     </style>
 </head>
 <body>
     <nav class="navbar">
         <a href="#" class="logo"><img src="https://www.pngall.com/wp-content/uploads/13/Dragon-Ball-PNG-Image-HD.png" alt="Gym Logo"></a>
+            <a class="nav-link text-white" href="http://localhost:8080/chethan_gym/userHome?email=${registrationEntity.email}">Home</a>
+
     </nav>
 
     <div class="form-container">
         <h2 class="text-center" style="color: #1e3a8a;">Update Form</h2>
-        <form action="updateUserProfile" method="post">
+        <form id="userUpdateForm" action="updateUserProfile" method="post" enctype="multipart/form-data">
 
 
 <div class="form-group">
@@ -175,17 +183,21 @@
 
        <div class="form-group">
                     <label for="age">Age:</label>
-                    <input type="number" name="age" class="form-control" id="age" required>
+                    <input type="number" name="age" class="form-control" id="age" required onchange="onAge()" value="${registrationEntity.age}">
+                                    <span id="ageError" class="error"></span>
        </div>
 
        <div class="form-group">
                            <label for="weight">Weight:</label>
-                           <input type="number" name="weight" class="form-control" id="weight" required>
+                           <input type="number" name="weight" class="form-control" id="weight" required onchange="validateWeight()" value="${registrationEntity.weight}">
+                                                               <span id="weightError" class="error"></span>
        </div>
 
        <div class="form-group">
              <label for="Height">Height in feet:</label>
-             <input type="text" name="height" class="form-control" id="height" required>
+             <input type="text" name="height" class="form-control" id="height" required onchange="validateHeight()" value="${registrationEntity.height}">
+                                                 <span id="heightError" class="error"></span>
+
        </div>
 
        <div class="form-group">
@@ -203,12 +215,48 @@
          Upload Picture<input class="form-control" type="file" id="picture" name="picture">
 
         <button type="submit" class="btn btn-primary btn-block">Sumbit</button>
+
     </form>
 
     </div>
     <img src="https://www.pngall.com/wp-content/uploads/13/Dragon-Ball-PNG-Image-HD.png"
          alt="Fitness Image" class="fitness-image" style="width: 6cm; height: 6cm; position: relative; top: 1cm; right:5cm;">
 
+   <script>
+
+function onAge() {
+           const age = document.getElementById("age").value.trim();
+           const ageError = document.getElementById("ageError");
+           ageError.textContent = isNaN(age) || age < 10 || age > 100 ? "Age must be between 10 and 100." : "";
+       }
+
+       function validateWeight() {
+                  const weight = document.getElementById("weight").value.trim();
+                  const weightError = document.getElementById("weightError");
+                  weightError.textContent = isNaN(weight) || weight < 30 || weight > 200 ? "Weight must be between 30 and 200." : "";
+              }
+
+              function validateHeight() {
+                  const height = document.getElementById("height").value.trim();
+                  const heightError = document.getElementById("heightError");
+                  const heightValue = parseFloat(height);
+
+                  heightError.textContent = isNaN(heightValue) || heightValue < 3 || heightValue > 10 ? "Height must be between 3 and 10 feet." : "";
+              }
+
+
+       document.getElementById("userUpdateForm").addEventListener("submit", function (event) {
+           let valid = true;
+
+           onAge();
+           validateWeight();
+           validateHeight();
+
+           if (document.querySelector(".error").textContent !== "") {
+               event.preventDefault();
+           }
+       });
+   </script>
 
 </body>
 </html>

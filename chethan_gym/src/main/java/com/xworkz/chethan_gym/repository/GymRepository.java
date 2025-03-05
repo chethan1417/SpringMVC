@@ -23,5 +23,23 @@ public interface GymRepository {
 
      boolean updateUserPassword(RegistrationEntity registrationEntity);
 
-    boolean updateUserProfile(RegistrationEntity registrationEntity);
+    boolean updateUserProfile(RegistrationEntity registrationEntity , String filePath);
+
+    boolean saveTrainers(TrainersEntity trainersEntity);
+
+    boolean saveTime(TimeEntity timeEntity);
+
+    List<TrainersEntity> getAllTrainers();
+
+    List<TimeEntity> getSlots();
+
+    boolean updateSlotsForTrainers(TrainersEntity trainersEntity);
+
+    boolean updateSlotsForClients(RegistrationEntity registrationEntity);
+
+    List<RegistrationEntity> getClientsOfTrainer(String trainerName);
+
+    boolean deleteTrainer(String trainerName);
+
+    boolean updateDAWForClients(RegistrationEntity registrationEntity);
 }

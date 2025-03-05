@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
@@ -129,15 +130,19 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${viewDetailsEntity}" var="viewDetailsEntity">
+                <c:forEach items="${viewDetailsEntity}" var="viewDetailsEntity" varStatus="status">
                     <tr>
-                        <td>${viewDetailsEntity.viewdetails_id}</td>
+                        <td>${status.index + 1}</td>
                         <td>${viewDetailsEntity.status}</td>
                         <td>${viewDetailsEntity.description}</td>
-                        <td>${viewDetailsEntity.updatedDateAndTime}</td>
+<td>
+    <fmt:parseDate value="${viewDetailsEntity.updatedDateAndTime}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="formattedDate"/>
+    <fmt:formatDate value="${formattedDate}" pattern="yyyy-MM-dd HH:mm:ss"/>
+</td>
                     </tr>
                 </c:forEach>
             </tbody>
+
         </table>
         <a href="http://localhost:8080/chethan_gym/follow" class="btn btn-success mt-3"><i class="fas fa-arrow-left"></i> Back to Enquiry List</a>
     </div>

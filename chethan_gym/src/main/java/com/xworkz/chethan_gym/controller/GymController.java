@@ -3,13 +3,8 @@ package com.xworkz.chethan_gym.controller;
 import com.xworkz.chethan_gym.constants.GymNameEnum;
 import com.xworkz.chethan_gym.constants.PackageEnum;
 import com.xworkz.chethan_gym.constants.StatusEnum;
-import com.xworkz.chethan_gym.dto.AdminDTO;
-import com.xworkz.chethan_gym.dto.EnquiryDTO;
-import com.xworkz.chethan_gym.dto.RegistrationDTO;
-import com.xworkz.chethan_gym.entity.EnquiryEntity;
-import com.xworkz.chethan_gym.entity.RegUpdateEntity;
-import com.xworkz.chethan_gym.entity.RegistrationEntity;
-import com.xworkz.chethan_gym.entity.ViewDetailsEntity;
+import com.xworkz.chethan_gym.dto.*;
+import com.xworkz.chethan_gym.entity.*;
 import com.xworkz.chethan_gym.service.GymService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,7 +39,7 @@ public class GymController {
         if (valid) {
             return "Success.jsp";
         }
-        return "Success.jsp";
+        return "AdminLogin.jsp";
     }
 
     @GetMapping("/registration")
@@ -65,10 +60,10 @@ public class GymController {
     public String onEnquiry(EnquiryDTO enquiryDTO){
         boolean saved = gymService.validateAndSaveForEnquiry(enquiryDTO);
         if (saved){
-            return "Enquiry.jsp";
+            return "RegistrationSuccess.jsp";
         }
         else {
-            return "Success.jsp";
+            return "Enquiry.jsp";
         }
     }
 
@@ -89,8 +84,7 @@ public class GymController {
         if (updatedEnquiry != null) {
             return "redirect:/follow";
         } else {
-            model.addAttribute("error", "Failed to update enquiry.");
-            return "Success.jsp";
+            return "RegistrationSuccess.jsp";
         }
     }
 
@@ -107,10 +101,10 @@ public class GymController {
 
        boolean updated = gymService.updateRegistration(reg_id,name, packages, trainer ,amount,paidAmount,balance);
         if (updated) {
-            return "Update.jsp";
+            return "RegistrationSuccess.jsp";
         } else {
-            model.addAttribute("error", "Failed to update....");
-            return "Success.jsp";
+            model.addAttribute("error", "Failed to update .");
+            return "Update.jsp";
         }
     }
 
@@ -122,8 +116,10 @@ public class GymController {
         if (registrationEntity!=null){
             model.addAttribute("registrationEntity",registrationEntity);
             return "Update.jsp";
+        }else {
+            model.addAttribute("noEmail","No Data Found For this mail");
+            return "Update.jsp";
         }
-        return "Success.jsp";
     }
 
     @PostMapping("/viewDetails")
@@ -151,4 +147,164 @@ public class GymController {
        }
         return "Success.jsp";
     }
+
+    @PostMapping("/trainers")
+    public String onTrainers(TrainerDTO trainerDTO, Model model)  {
+        boolean saved =gymService.onTrainers(trainerDTO);
+        if (saved){
+            return "RegistrationSuccess.jsp";
+        }
+        model.addAttribute("error", "Failed to Add Trainers.");
+        return "Trainers.jsp";
+    }
+
+    @PostMapping("/timeSlots")
+    public String onTime(TimeDTO timeDTO,Model model){
+        boolean saved =gymService.onTime(timeDTO);
+        if (saved){
+            return "RegistrationSuccess.jsp";
+        }
+        model.addAttribute("error", "Failed to Add slots.");
+        return "AddSlots.jsp";
+    }
+
+    @GetMapping("/allotment")
+    public String allotment(Model model){
+        List<TrainersEntity> trainersEntities =gymService.getAllTrainers();
+        List<TimeEntity> timeEntities = gymService.getSlots();
+        if (trainersEntities!=null){
+            model.addAttribute("trainersEntities",trainersEntities);
+            model.addAttribute("timeEntities",timeEntities);
+            return "AlotSlots.jsp";
+        }
+        return "Success.jsp";
+    }
+
+
+    @PostMapping("/allotment")
+    public String assignSlots(@RequestParam("trainer") String trainer , @RequestParam("slot") String slot,Model model){
+      boolean done =  gymService.updateSlotsForTrainers(trainer,slot);
+      if (done){
+          return "RegistrationSuccess.jsp";
+      }
+        model.addAttribute("error", "Failed to update enquiry.");
+        return "AlotSlots.jsp";
+    }
+
+
+    @GetMapping("/slotDetails")
+    public String slotDetails(Model model){
+        List<TrainersEntity> trainersEntities =gymService.getAllTrainers();
+        if (trainersEntities!=null){
+            model.addAttribute("trainersEntities",trainersEntities);
+            return "SlotsDetails.jsp";
+        }
+        return "Success.jsp";
+    }
+
+    @PostMapping("/removeSlot")
+    public String removeSlots(@RequestParam("trainerName") String trainerName){
+        System.out.println(trainerName);
+        gymService.removeSlots(trainerName);
+        return "RegistrationSuccess.jsp";
+    }
+
+
+    @PostMapping("/clientsearch")
+    public String getClientEntityByEmail(@RequestParam("email")String email , Model model){
+
+        RegistrationEntity registrationEntity =gymService.getAllEnquiriesRegistration(email);
+        List<TrainersEntity> trainersEntities =gymService.getAllTrainers();
+        if (registrationEntity!=null){
+            model.addAttribute("registrationEntity",registrationEntity);
+            model.addAttribute("trainersEntities",trainersEntities);
+            return "ClientSlot.jsp";
+        }
+        return "Success.jsp";
+    }
+
+    @PostMapping("/trainerSearch")
+    public String getTrainerEntityByEmail(Model model){
+
+        List<TrainersEntity> trainersEntities =gymService.getAllTrainers();
+
+        System.out.println(trainersEntities);
+        if (trainersEntities!=null){
+            model.addAttribute("trainersEntities",trainersEntities);
+            return "ClientSlot.jsp";
+        }
+        return "Success.jsp";
+    }
+
+    @PostMapping("/clientAllotment")
+    public String alotClientSlots(@RequestParam("clientName") String clientName , @RequestParam("trainer") String trainer , @RequestParam("slot") String slot,Model model){
+        boolean saved =gymService.updateSlotsForClients(clientName,trainer,slot);
+        if (saved){
+            return "RegistrationSuccess.jsp";
+        }
+        model.addAttribute("error", "Failed to update enquiry.");
+        return "ClientSlot.jsp";
+    }
+
+    @PostMapping("/clientSlotSearch")
+    public String searchClientSlotByEmail(@RequestParam("email")String email , Model model){
+
+        RegistrationEntity registrationEntity =gymService.getAllEnquiriesRegistration(email);
+        System.out.println(registrationEntity);
+        if (registrationEntity!=null){
+            model.addAttribute("registrationEntity",registrationEntity);
+
+            return "SearchClient.jsp";
+        }
+        return "Success.jsp";
+    }
+
+    @PostMapping("/deleteTrainer")
+    public String deleteTrainer(@RequestParam("trainerName") String trainerName,Model model){
+         List<RegistrationEntity> clients = gymService.getAllClientsForTrainer(trainerName);
+        System.out.println(clients);
+         if (clients!=null && !clients.isEmpty()){
+             model.addAttribute("clientNames",clients);
+             return "ClientSlot.jsp";
+         }
+         else {
+             gymService.deleteTrainer(trainerName);
+             return "RegistrationSuccess.jsp";
+         }
+    }
+
+    @PostMapping("/assignDAW")
+    public String assignDAW(@RequestParam("clientName")String clientName,@RequestParam("workoutPlan")String workoutPlan ,@RequestParam("dietPlan")String dietPlan){
+        if (clientName!=null){
+            boolean saved =gymService.updateDAWForClients(clientName,dietPlan,workoutPlan);
+            if (saved){
+                return "RegistrationSuccess.jsp";
+            }
+        }
+        return "Success.jsp";
+    }
+
+    @PostMapping("/getClient")
+    public String assignDAWgetClient(@RequestParam("email")String email,Model model){
+        RegistrationEntity registrationEntity =gymService.getAllEnquiriesRegistration(email);
+        System.out.println(registrationEntity);
+        System.out.println(email);
+        if (registrationEntity!=null){
+            model.addAttribute("registrationEntity",registrationEntity);
+            return "AssignDAW.jsp";
+        }
+        model.addAttribute("error", "No Client found for this mail.");
+        return "AssignDAW.jsp";
+    }
+
+    @GetMapping("/viewDAW")
+    public String dawDetails(@RequestParam("email")String email, Model model){
+       RegistrationEntity registrationEntity = gymService.getAllEnquiriesRegistration(email);
+       if (registrationEntity!=null){
+           model.addAttribute("registrationEntity",registrationEntity);
+           return "ViewDAW.jsp";
+       }
+        return "Success.jsp";
+    }
+
 }

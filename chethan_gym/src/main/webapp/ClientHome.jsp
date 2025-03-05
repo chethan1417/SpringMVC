@@ -1,3 +1,5 @@
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,30 +9,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* General Body Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        /* Header (Navbar) Styling */
         header {
-            background-color: #2c2c2c; /* Darker background for a refined look */
-            border-bottom: 2px solid #333; /* Subtle border for separation */
+            background-color: #2c2c2c;
+            border-bottom: 2px solid #333;
             padding: 10px 0;
         }
 
         header h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #f0a500; /* Premium gold color for header */
-            text-transform: uppercase; /* Uppercase for a modern feel */
-            letter-spacing: 2px; /* Slight letter spacing */
+            color: #f0a500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 20px;
         }
 
-        /* Navigation Bar Styling */
         nav ul {
             padding: 0;
             margin: 0;
@@ -56,28 +55,27 @@
             letter-spacing: 1px;
             padding: 8px 15px;
             display: inline-block;
-            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
-            text-decoration: none; /* Remove underline */
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
         }
 
         nav a:hover {
-            color: #f0a500; /* Gold hover effect */
-            transform: scale(1.1); /* Slight zoom effect on hover */
+            color: #f0a500;
+            transform: scale(1.1);
         }
 
         nav a.active {
-            color: #f0a500; /* Active link color */
+            color: #f0a500;
         }
 
         .navbar-toggler {
-            border-color: #f0a500; /* Gold border for the toggle button */
+            border-color: #f0a500;
         }
 
         .navbar-toggler-icon {
-            background-color: #f0a500; /* Gold color for the toggle icon */
+            background-color: #f0a500;
         }
 
-        /* Programs Section Styling */
         .program-section {
             background: url('https://source.unsplash.com/1600x900/?gym,workout') no-repeat center center/cover;
             padding: 100px 0;
@@ -184,7 +182,7 @@
         }
 
         .service-img {
-            height: 400px; /* Adjust this value to your desired height */
+            height: 400px;
             object-fit: cover;
         }
 
@@ -201,28 +199,27 @@
 #services,
 #testimonials,
 #contact {
-    padding: 5px 5px; /* Reduce padding for all sections */
+    padding: 5px 5px;
 }
 
 .program-section {
-    padding: 60px 0; /* Reduced from 100px */
+    padding: 60px 0;
 }
 
 .hero {
-    padding: 70px 20px; /* Adjusted */
+    padding: 70px 20px;
 }
 
 
 
 .login-section .row {
-    margin-top: 50px; /* Adjust the value as needed */
+    margin-top: 50px;
 }
 
 .login-section .btn {
-    margin-top: 15px; /* Adds space above buttons */
+    margin-top: 15px;
 }
 
-/* Fade-in Animation for Sections */
             .fade-in {
                 opacity: 0;
                 transform: translateY(30px);
@@ -233,7 +230,6 @@
                 transform: translateY(0);
             }
 
-            /* Button Hover Animation */
             .btn {
                 transition: all 0.3s ease;
             }
@@ -241,13 +237,11 @@
                 transform: scale(1.1);
             }
 
-            /* Image Hover Effect */
             .img-fluid:hover {
                 transform: scale(1.05);
                 transition: transform 0.3s ease;
             }
 
-            /* Smooth Scroll */
             html {
                 scroll-behavior: smooth;
             }
@@ -269,17 +263,14 @@
 }
 
 .transparent-bg {
-    background: transparent !important; /* Ensures full transparency */
-    backdrop-filter: none; /* No blur effect */
+    background: transparent !important;
+    backdrop-filter: none;
 }
 
-/* Optional: Ensure text and buttons are visible */
 .text-white {
     color: white !important;
 }
 
-
-            /* Overlay to make text readable */
             .video-overlay {
                 position: absolute;
                 top: 0;
@@ -361,10 +352,12 @@
 </head>
 <body>
     <header class="bg-dark text-white text-center p-4">
-        <h1>WELCOME</h1>
+        <h1>WELCOME , ${registrationEntity.name}</h1>
         <nav>
             <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link text-white" href="#login">Login</a></li>
+<li class="nav-item">
+    <a class="nav-link text-white" href="http://localhost:8080/chethan_gym/userDetails?email=${registrationEntity.email}">Profile</a>
+</li>
                 <li class="nav-item"><a class="nav-link text-white" href="#programs">Programs</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#testimonials">Review</a></li>
@@ -376,31 +369,24 @@
     <section id="login" class="login-section text-center text-dark position-relative">
         <!-- Background Video -->
         <div class="video-background">
-            <video autoplay loop muted playsinline class="video-element">
-                <source src="https://resource.flexclip.com/templates/video/720p/youtube-intro-for-sports.mp4?v=1.0.6.8.1" type="video/mp4">
+            <video autoplay muted loop playsinline>
+                <source src="https://resource.flexclip.com/templates/video/720p/text-effects-sports-intro.mp4?v=1.0.6.8.1" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <iframe
+                src="https://www.youtube.com/embed/tUykoP30Gb0?start=3&autoplay=1&mute=1&loop=1&playlist=tUykoP30Gb0&controls=0&showinfo=0&modestbranding=1"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
         </div>
 
-        <!-- Overlay to improve readability -->
+        <!-- Overlay to Improve Readability -->
         <div class="video-overlay"></div>
 
-        <!-- Login Buttons -->
-    <div class="container py-5 position-relative transparent-bg" style="z-index: 2;">
-            <div class="row justify-content-center">
-                <div class="col-auto text-center">
-                    <a href="AdminLogin.jsp" class="btn btn-primary btn-lg mb-2">Admin</a>
-                    <h6 class="text-white">Admin Login</h6>
-                </div>
-                <div class="col-auto text-center">
-                    <a href="UserLogin.jsp" class="btn btn-secondary btn-lg mb-2">Client</a>
-                    <h6 class="text-white">Client Login</h6>
-                </div>
-            </div>
+
         </div>
     </section>
-
-
 
 
     <section id="programs" class="program-section text-center text-dark">

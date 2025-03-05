@@ -24,8 +24,21 @@
             padding: 30px;
             box-shadow: black;
             width: 500px;
-            margin-left: -500px;
+            margin-left: -80px;
+            transform: translateX(50px);
         }
+
+        .image {
+            margin-left: 200px;
+        }
+
+.image img {
+    border-radius: 50%;
+    width: 400px;
+    height: 350px;
+    object-fit: cover;
+    border: 3px solid #1e3a8a;
+}
 
         label {
             color: black;
@@ -84,7 +97,6 @@
             box-shadow: 0px 5px 10px #1e3a8a;
         }
 
-
         .navbar {
             position: fixed;
             top: 0;
@@ -115,6 +127,7 @@
             opacity: 0;
         }
     }
+
         .navbar .logo img {
             height: 60px;
             animation: bounce 5s ease-out infinite;
@@ -220,11 +233,18 @@
             </form>
         </div>
 
+        <div class="text-center mt-4">
+                    <form action="viewDAW" method="get">
+                        <input type="hidden" name="email" value="${registrationEntity.email}">
+                        <button type="submit" class="btn btn-primary">View Diet And Workout</button>
+                    </form>
+                </div>
+
 
     </div>
 
-    <img src="https://www.pngall.com/wp-content/uploads/13/Dragon-Ball-PNG-Image-HD.png"
-         alt="Fitness Image" class="fitness-image" style="width: 6cm; height: 6cm; position: relative; top: -3cm; right: -6cm;">
-
+    <div class="image">
+<img src="${pageContext.request.contextPath}/download?filePath=${filePath}" alt="${filePath}">
+        </div>
 </body>
 </html>
